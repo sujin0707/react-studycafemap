@@ -2,6 +2,11 @@
   width: 80px;
   height: 100px;
   border-radius: 3px;
+  border: 1px solid #000;
+  display: flex;
+  background-color: darkgrey;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 #cards {
