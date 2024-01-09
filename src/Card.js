@@ -13,34 +13,10 @@ class Card {
     return cardElement;
   }
 
-  handleCardClick() {
-    alert(this.isWinner ? '당첨입니다' : '꽝입니다');
-  }
-}
-
-class CardGame {
-  constructor() {
-    this.cardContainer = document.querySelector("#cards");
-    this.cards = this.createCards();
-    this.renderCards();
-  }
-
-  createCards() {
-    const cards = [];
-    const winnerLocation = Math.floor(Math.random() * 3);   
-
-    for (let i = 0; i < 3; i++) {
-      const isWinner = i === winnerLocation;
-      const card = new Card(isWinner);
-      cards.push(card);
-    }
-    return cards;
-  }
-
-  renderCards() {
-    this.cards.forEach((card) => {
-      this.cardContainer.appendChild(card.element);
-    });
+  handleCardClick(resultContainer) {
+    const resultMessage = document.createElement('p');
+    resultMessage.textContent = this.isWinner ? '당첨입니다' : '꽝입니다';
+    resultContainer.appendChild(resultMessage);
   }
 }
 
