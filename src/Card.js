@@ -13,10 +13,13 @@ class Card {
     return cardElement;
   }
 
-  handleCardClick(resultContainer) {
+  handleCardClick() {
     const resultMessage = document.createElement('p');
     resultMessage.textContent = this.isWinner ? '당첨입니다' : '꽝입니다';
-    resultContainer.appendChild(resultMessage);
+    const resultContainer = document.querySelector('#result');
+    if (!resultContainer.hasChildNodes()) {
+      resultContainer.appendChild(resultMessage);
+    }
   }
 }
 
