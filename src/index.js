@@ -1,8 +1,5 @@
 import '../index.css';
-import Card from './Card';
+import CardGame from './CardGame';
 
-// 실제 실행 코드 작성
-// ex)cardGame.start()
-
-const cardGame = new Card();
+const cardGame = new CardGame();
 cardGame.start();
