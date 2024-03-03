@@ -1,23 +1,53 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import "./CafeDetailPage.css";
 
-const CafeDetailPage = ({ cafes }) => {
+const CafeDetailPage = ({ cafes, list, changeFavorite }) => {
 
-    const { cafeName } = useParams();
+    const { id } = useParams();
+    const cafe = cafes.find(cafe=> cafe.cafeId === parseInt(id));
+    const isFavorite = list.find(item => item.name === cafe.name)?.favorite;
+    const toggleFavorite = () => {
+        changeFavorite(cafe.name);
+    };
 
-    // cafeName을 사용하여 해당 카페의 정보를 찾습니다.
-    const cafe = cafes.find(cafe => cafe.name === cafeName);
-    
-    /*
     return (
         <div className="cafe-detail">
-            <img className="picture" src={cafe.imageUrl} />
-            <div className="cafeName">{cafe.name}</div>
-            <div className="americanoCost">{"아메리카노 " + cafe.minPrice}</div>
-            <div className="characteristic">{cafe.tags.join(", ")}</div>
+            <h1 className="detail-Logo">LOGO</h1>
+            <img className="detail-cafe-picture" src={cafe.imageUrl} alt={cafe.name} />
+            <div className="detail-cafeName">{cafe.name}</div>
+            {isFavorite ? (
+                <img
+                    className="detail-isFavorite"
+                    src="/img/like.png"
+                    style={{ cursor: "pointer" }}
+                    alt="favorite"
+                    onClick={toggleFavorite}
+                />
+            ) : (
+                <img
+                    className="detail-isFavorite"
+                    src="/img/dislike.png"
+                    style={{ cursor: "pointer" }}
+                    alt="favorite"
+                    onClick={toggleFavorite}
+                />
+            )}
+            <div className="detail-americanoCost">{"아메리카노 " + cafe.minPrice + "원"}</div>
+            <div className="detail-characteristic">{cafe.operationHours}</div>
+            <div className="detail-tags">
+                {cafe.tags.map((tag, index) => (
+                    <div key={index} className="detail-tag-container">
+                        <div className="detail-tag"> {tag} </div>
+                    </div>
+                ))}
+            </div>
+            <h3 className="review">리뷰</h3>
+            <div className="review-list">
+            </div>
+            <button className="review-button"></button>
         </div>
-  );
-  */
+    );
 };
 
 export default CafeDetailPage;

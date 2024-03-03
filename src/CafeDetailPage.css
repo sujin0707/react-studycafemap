@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+.cafe-detail {
+    margin: 0;
+    padding: 0;
+}
+
+.detail-Logo{
+    /* LOGO */
+  display: inline-block;
+  width: 88px;
+  height: 36px;
+  left: 194px;
+  top: 21px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 36.31px;
+  
+  color: #5E94FF;
+}
+
+.detail-cafe-picture{
+    /* cafe image */
+  width: 480px;
+  height: 280px;
+  top: 78px;
+  margin-bottom: 2px;
+  
+  }
+
+.detail-cafeName {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 20px;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+}
+
+.detail-isFavorite {
+    margin-top: 10px; 
+    margin-left: 430px; 
+}
+
+.detail-americanoCost {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px;
+}
+
+.detail-characteristic {
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 23px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+
+    color: #ADADAD;
+}
+
+.detail-tags {
+    position: absolute;
+    margin-left: 20px;
+    overflow-x: auto;
+}
+
+.detail-tag-container {
+    display: inline-block;
+    margin-top: 65px;
+    margin-left: 5px;
+}
+
+.detail-tag {
+    padding: 5px 10px;
+    border: 1px solid #5E94FF;
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+    color: #5E94FF;
+}
+
+.review {
+    position: absolute;
+    margin-top: 140px;
+    margin-left: 35px;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+}
+
+.review-button {
+    position: fixed;
+    bottom: 35px;
+    right: 170px;
+    width: 50px;
+    height: 50px;
+    background-color: #5E94FF;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+}

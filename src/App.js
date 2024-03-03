@@ -13,7 +13,7 @@ function App() {
     }))
   );
 
-  const changeFavorite = (name, favorite) => {
+  const changeFavorite = (name) => {
     setList((prevList) => {
       return prevList.map((item) => {
         if (item.name === name) {
@@ -29,7 +29,7 @@ function App() {
       <div id="app" className="App">
         <Routes>
           <Route path="/" element={<MainPage cafes={cafes.data} list={list} changeFavorite={changeFavorite} />} />
-          <Route path="/cafe/:name" element={<CafeDetailPage cafes={cafes.data} />} />
+          <Route path="/cafe/:id" element={<CafeDetailPage cafes={cafes.data} list={list} changeFavorite={changeFavorite} />} />
         </Routes>
       </div>
     </Router>
