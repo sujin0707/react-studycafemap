@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./MainPage.css";
 
 const MainPage = ({ cafes, list, changeFavorite }) => {
+
 
     return (
         <div id="MainPage" className="MainPage">
@@ -11,11 +12,11 @@ const MainPage = ({ cafes, list, changeFavorite }) => {
             {cafes.map((cafe, index) => (
                 <div key={index}>
                     <div className="grayLine"></div>
-                    <Link to={`/cafe/${encodeURIComponent(cafe.name)}`} className="cafeLink">
+                    <Link to={`/cafe/${cafe.cafeId}`} key={cafe.cafeId} className="cafeLink">
                         <img className="picture" src={cafe.imageUrl} alt={cafe.name} />
                         <div className="cafeName">{cafe.name}</div>
                         <div className="americanoCost">{"아메리카노 " + cafe.minPrice}</div>
-                        <div className="characteristic">{cafe.tags.join(", ")}</div>
+                        <div className="characteristic">{cafe.operationHours + ", " + cafe.tags.join(", ")}</div>
                     </Link>
                     {list.find((item) => item.name === cafe.name)?.favorite ? (
                         <img 
