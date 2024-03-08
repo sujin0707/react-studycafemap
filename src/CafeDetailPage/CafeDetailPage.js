@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./CafeDetailPage.css";
-import styles from "./ahyeon.module.css";
+import "../CafeDetailPage/CafeDetailPage.css";
+import styles from "../CafeDetailPage/ahyeon.module.css";
 import WriteReview from "./WriteReview";
 import { logDOM } from "@testing-library/react";
 

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import cafes from "./cafes.json";
-import MainPage from "./MainPage";
-import CafeDetailPage from "./CafeDetailPage";
-import "./App.css";
+import cafes from "../cafes.json";
+import MainPage from "../MainPage/MainPage";
+import CafeDetailPage from "../CafeDetailPage/CafeDetailPage";
+import "../App/App.css";
 
 function App() {
   const [list, setList] = useState(

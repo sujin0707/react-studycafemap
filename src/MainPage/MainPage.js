@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import "./MainPage.css";
+import "../MainPage/MainPage.css";
 
 const MainPage = ({ cafes, list, changeFavorite }) => {
 

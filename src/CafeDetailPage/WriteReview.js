@@ -1,8 +1,8 @@
 // WriteReview.js
 import React, { useState } from "react";
-import "./WriteReview.css";
+import "../CafeDetailPage/WriteReview.css";
 import { useParams } from "react-router-dom";
-import SubmitToLocalStorage from "./SubmitToLocalStorage";
+import SubmitToLocalStorage from "../CafeDetailPage/SubmitToLocalStorage";
 
 const WriteReview = ({ onClose }) => {
   const { name } = useParams();
