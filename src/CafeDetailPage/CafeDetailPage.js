@@ -39,7 +39,7 @@ const CafeDetailPage = ({ cafes, list, changeFavorite }) => {
     return (
         <div className="cafe-detail">
             <h1 className="detail-Logo">LOGO</h1>
-            <img className="detail-cafe-picture" src={cafe.imageUrl} alt={cafe.name} />
+            <img className="detail-cafe-picture" src={cafe.imageUrl || "이미지 주소가 없을 때 기본 이미지 주소"} width={100} height={100} />
             <div className="detail-cafeName">{cafe.name}</div>
             {isFavorite ? (
                 <img

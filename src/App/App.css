@@ -12,10 +12,11 @@ body {
 
 #app {
   max-width: 480px;
-  min-height: 120vh;
+  min-height: 200vh;
   margin: auto;
   background-color: white;
-  
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
