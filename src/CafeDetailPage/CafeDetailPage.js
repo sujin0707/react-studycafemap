@@ -99,7 +99,7 @@ const CafeDetailPage = ({ cafes, list, changeFavorite }) => {
             </div>
 
         <button className={styles.writeComment} onClick={() => setShowReview(true)}>
-            <img src="/img/frame.png" alt="리뷰 작성"></img>
+            <img src="/img/Frame.png" alt="리뷰 작성"></img>
         </button>
 
         {showReview && <WriteReview onClose={() => setShowReview(false)} />}
