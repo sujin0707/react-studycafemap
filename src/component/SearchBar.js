@@ -13,6 +13,7 @@ const SearchBar = ({ cafes, onSearch, favorites, onFavoriteChange }) => {
   }, [searchText, onSearch]);
 
   const handleSearch = () => {
+    if (searchText.length > 0) { 
     const filteredCafes = cafes.filter((cafe) => {
       return (
         cafe.name.toLowerCase().includes(searchText.toLowerCase()) ||
@@ -24,7 +25,11 @@ const SearchBar = ({ cafes, onSearch, favorites, onFavoriteChange }) => {
 
     setFilteredCafes(filteredCafes);
     setShowNoResult(filteredCafes.length === 0 && searchText.length > 0);
-  };
+  } else {
+    setFilteredCafes([]); // 검색어가 없는 경우, 모든 카페를 보여줄 수 있도록 빈 배열로 설정
+    setShowNoResult(false); // 검색어가 없는 경우, "검색 결과가 없습니다." 메시지를 표시하지 않음
+  }
+};
 
   const handleInputChange = (e) => {
     setSearchText(e.target.value);
