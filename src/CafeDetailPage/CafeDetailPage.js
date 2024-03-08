@@ -39,7 +39,7 @@ const CafeDetailPage = ({ cafes, list, changeFavorite }) => {
     return (
         <div className="cafe-detail">
             <h1 className="detail-Logo">LOGO</h1>
-            <img className="detail-cafe-picture" src={cafe.imageUrl} alt={cafe.name} />
+            <img className="detail-cafe-picture" src={cafe.imageUrl || "이미지 주소가 없을 때 기본 이미지 주소"} width={100} height={100} />
             <div className="detail-cafeName">{cafe.name}</div>
             {isFavorite ? (
                 <img
@@ -68,6 +68,8 @@ const CafeDetailPage = ({ cafes, list, changeFavorite }) => {
                 ))}
             </div>
             <h3 className="review">리뷰</h3>
+            <div className="review-grayLine1"></div>
+            <div className="review-list">
             {localData.userReview ? localData.userReview.map((item, index) => {
                 console.log(item.userReview);
                 let realReview = `${item.userReview[0]}`;
@@ -75,26 +77,26 @@ const CafeDetailPage = ({ cafes, list, changeFavorite }) => {
                 let realDate = item.userReview[2];
                 return (
                     <div>
-                        <div>
+                        <div key={index} className="reviewContainer">
                             <div className="profileName">익명의 누군가</div>
                             <div className="profileImage"></div>
-                            <div className="realComment">{realReview}</div>
                             <div className="date">{realDate}</div>
-                            {realTags.map(
-                                (realTag, index) =>
-                                    realTag === true && (
-                                        <div className="realTag" key={index}>
-                                            {tags[index]}
-                                        </div>
-                                    )
-                            )}
-
-                            <div className="grayLine"></div>
+                            <div className="realComment">{realReview}</div>
+                            <div className="tagContainer">
+                                {realTags.map(
+                                    (realTag, index) =>
+                                       realTag === true && (
+                                           <div className="realTag" key={index}>{tags[index]}</div>
+                                       )
+                                )}
+                            </div>
+                            <div className="review-grayLine"></div>
                         </div>
                     </div>
                 );
             })
-        : null}
+            : null}
+            </div>
 
         <button className={styles.writeComment} onClick={() => setShowReview(true)}>
             <img src="/img/frame.png" alt="리뷰 작성"></img>

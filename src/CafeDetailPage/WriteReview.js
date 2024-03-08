@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import SubmitToLocalStorage from "../CafeDetailPage/SubmitToLocalStorage";
 
 const WriteReview = ({ onClose }) => {
-  const { name } = useParams();
+  const { id } = useParams();
 
   const tags = ["자리적음", "자리많음", "콘센트적음", "콘센트많음", "조용함"];
 
@@ -28,7 +28,7 @@ const WriteReview = ({ onClose }) => {
 
   function handleSubmit() {
     let now = new Date();
-    SubmitToLocalStorage(name, {
+    SubmitToLocalStorage(id, {
       // userComment: text,
       // userTags: buttonStates,
       userReview: [text, buttonStates, now],

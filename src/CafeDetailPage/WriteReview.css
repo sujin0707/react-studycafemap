@@ -1,44 +1,33 @@
 
- .shadow{
+.shadow{
     /* background */
-
-
-position: relative;
-width: 480px;
-height: 572px;
-left: 0px;
-top: -188px;
-
-background: rgba(0, 0, 0, 0.25);
-
- }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
 .X{
 
-
 position: relative;
 left: 400px;
-top: -750px;
-
-
+top: -710px;
 border: 2.66667px solid #ADADAD;
 
-
 }
+
 .modal {
     /* modal */
 
-    background: #FFFFFF;
+background: #FFFFFF;
 border-radius: 10px;
-
 position: relative;
 width: 480px;
-height: 502px;
+height: 400px;
 left: 0px;
-top: -150px;
-
-
-
+top: -240px;
 
  }
  
